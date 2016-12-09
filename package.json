@@ -9,16 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vpodolyan/achieveday.git"
+    "url": "https://github.com/vpodolyan/react-book-list.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vpodolyan/achieveday/issues"
+    "url": "https://github.com/vpodolyan/react-book-list/issues"
   },
   "homepage": "",
   "dependencies": {
     "react": "^0.14.7",
-    "react-day-picker": "^2.4.1",
     "react-dom": "^0.14.7",
     "react-redux": "^4.2.1",
     "redux": "^3.2.1"
@@ -35,14 +34,14 @@
     "css-loader": "^0.25.0",
     "enzyme": "^2.0.0",
     "expect": "^1.6.0",
-    "express": "^4.13.3",
     "html-webpack-plugin": "^2.22.0",
     "ignore-styles": "^5.0.1",
     "jsdom": "9.6.0",
     "jsdom-global": "2.1.0",
     "mocha": "^2.2.5",
     "node-libs-browser": "^0.5.2",
-    "react-addons-test-utils": "^0.14.7",
+    "react-addons-test-utils": "^0.14.8",
+    "react-dom": "^0.14.8",
     "style-loader": "^0.13.1",
     "webpack": "^1.9.11",
     "webpack-dev-middleware": "^1.2.0",

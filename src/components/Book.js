@@ -1,8 +1,10 @@
 import React from 'react'
 
-const Book = (title, author) => {
-    <div>{title}</div>
-    <div>{author}</div>
-}
+const Book = ({title, author}) => (
+    <div>
+        <div>{title}</div>
+        <div>{author}</div>
+    </div>
+)
 
-export Book
+export default Book

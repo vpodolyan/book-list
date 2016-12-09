@@ -2,4 +2,4 @@ import React from 'react'
 
 const AddBook = () => {}
 
-export AddBook
+export default AddBook

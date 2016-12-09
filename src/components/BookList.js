@@ -1,10 +1,12 @@
 import React from 'react'
 import Book from './Book.js'
 
-const BookList = (books) => {
-    {books.map((book) => {
-        <Book />
-    })}
-}
+const BookList = ({books}) => (
+    <div>
+    {books.map(book =>
+        <Book key={book.id} />
+    )}
+    </div>
+)
 
-export BookList
+export default BookList
