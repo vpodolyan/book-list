@@ -7,7 +7,7 @@ const BookList = ({books}) => (
     {books.map(book =>
         <Book
             key={book.id}
-            {...books}
+            {...book}
         />
     )}
     </div>
