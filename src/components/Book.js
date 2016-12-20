@@ -1,26 +1,10 @@
 import React from 'react'
 
-const Book = ({title, author, onBookAdd}) => {
-
-    const onAddBtnClick = (e) => {
-        e.preventDefault()
-        // if (!input.value.trim()) {
-        //   return
-        // }
-        // dispatch(addAchievement(input.value))
-        // input.value = ''
-        // input.focus()
-        // onBookAdd();
-    }
-
-    return (
+const Book = ({title, author}) => (
         <div>
-            <form>
-                <div className="book__title">{title}</div>
-                <div className="book__author">{author}</div>
-            </form>
+            <div className="book__title">{title}</div>
+            <div className="book__author">{author}</div>
         </div>
-    )
-}
+)
 
 export default Book

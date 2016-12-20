@@ -7,7 +7,7 @@ import NewBook from '../components/NewBook'
 const mapDispatchToProps = (dispatch) => {
   return {
     onBookAdd: (title, author) => {
-      dispatch(addBook(title, athor))
+      dispatch(addBook(title, author))
     }
   }
 }
