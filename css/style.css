@@ -1,0 +1,112 @@
+body {
+    background: #eee; /* #F0F0F0; */
+    font-size: 16px;
+}
+
+.book {
+    background: #fff;
+    margin-top: 1rem;
+}
+.book_inner {
+    padding: 1.25rem 2rem;
+}
+
+.book_inner div {
+    display: inline-block;
+}
+
+.book__title {
+    border-right: 0.25rem solid #f0f0f0;
+    width: 40%;
+}
+
+.book__author {
+    padding-left: 2rem;
+}
+
+.newBook__add-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #536DFE;
+    width: 56px;
+    height: 56px;
+    border-radius: 100%;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s;
+}
+
+.newBook__add-btn:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    color: #fff;
+}
+
+.newBook__add-btn i {
+    line-height: 56px;
+}
+
+.newBook form {
+    display: none;
+}
+
+.newBook form {
+    display: none;
+}
+
+.newBook.active form {
+    display: block;
+}
+
+.newBook form input {
+    display: inline-block;
+    color: #000;
+}
+
+.newBook__add-btn.active {
+    border-radius: 5px;
+    width: 400px;
+    height: 100px;
+}
+
+
+
+
+input {
+    /*width: 75%;*/
+    /*height: 50px;*/
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 28px;
+}
+
+.no-borders {
+    border: none;
+}
+
+.add-btn {
+    height: 50px;
+    font-size: 28px;
+    text-decoration: none;
+    color: #555555;
+    vertical-align: bottom;
+}
+
+.add-btn:hover {
+    text-decoration: none;
+}
+
+.date-picker__arrow {
+    display: inline-block;
+    font-size: 28px;
+}
+
+.date-picker__input {
+    font-size: 28px;
+}
+
+.date-picker__calendar {
+    display: flex;
+    justify-content: center;
+}

@@ -9,12 +9,18 @@ const NewBook = ({ onBookAdd }) => {
         onBookAdd(titleInput.value.trim(), authorInput.value.trim())
     }
 
+    const onPlusClick = (e) => {
+        e.target.classList.add("active");
+    }
+
     return (
-        <form onSubmit={(e) => onAddBtnClick(e)}>
-            <input type="text" ref={node => { titleInput = node }} />
-            <input type="text" ref={node => { authorInput = node }} />
-            <input className = "NewBook__add-btn" type="submit" value="Add" />
-        </form>
+        <div className="newBook newBook__add-btn" onClick={(e) => onPlusClick(e)}>
+            <form onSubmit={(e) => onAddBtnClick(e)}>
+                <input type="text" ref={node => { titleInput = node }} />
+                <input type="text" ref={node => { authorInput = node }} />
+            </form>
+            <i className="fa fa-plus"></i>
+        </div>
     )
 }
 
