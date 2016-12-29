@@ -1,5 +1,7 @@
 import React from 'react'
 
+import '../../css/new-book.css'
+
 const NewBook = ({ onBookAdd }) => {
     let titleInput
     let authorInput
@@ -15,10 +17,21 @@ const NewBook = ({ onBookAdd }) => {
 
     return (
         <div className="newBook newBook__add-btn" onClick={(e) => onPlusClick(e)}>
-            <form onSubmit={(e) => onAddBtnClick(e)}>
-                <input type="text" ref={node => { titleInput = node }} />
-                <input type="text" ref={node => { authorInput = node }} />
-            </form>
+            <div className="newBook__body">
+                <form className="newBook__add-form" onSubmit={(e) => onAddBtnClick(e)}>
+                    <div className="book">
+                        <div className="book_inner">
+                            <div className="book__title">
+                                <input type="text" ref={node => { titleInput = node }} />
+                            </div>
+                            <div className="book__author">
+                                <input type="text" ref={node => { authorInput = node }} />
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit">Add</button>
+                </form>
+            </div>
             <i className="fa fa-plus"></i>
         </div>
     )
