@@ -2,7 +2,7 @@ import React from 'react'
 
 import '../../css/new-book.css'
 
-const NewBook = ({ onBookAdd }) => {
+const NewBook = ({ onBookAdd, onPlusBtnClick, isActive }) => {
     let titleInput
     let authorInput
 
@@ -16,7 +16,7 @@ const NewBook = ({ onBookAdd }) => {
     }
 
     return (
-        <div className="newBook newBook__add-btn" onClick={(e) => onPlusClick(e)}>
+        <div className={'newBook newBook__add-btn ' + (isActive ? 'active' : '')} onClick={(e) => { if (isActive == false) { onPlusBtnClick(!isActive) } }}>
             <div className="newBook__body">
                 <form className="newBook__add-form" onSubmit={(e) => onAddBtnClick(e)}>
                     <div className="book">

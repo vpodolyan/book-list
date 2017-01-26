@@ -12,7 +12,7 @@ describe('NewBooksContainer component tests', () => {
     let component;
 
     beforeEach(() => {
-        const store = FakeStore({ books: []});
+        const store = FakeStore({ books: [], addBookButton: { isActive: false }});
 
         const wrapper = mount(
             <Provider store={store}>
