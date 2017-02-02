@@ -44,6 +44,8 @@
 
 .newBook__add-form {
     text-align: left;
+    position: relative;
+    z-index: 100;
 }
 
 .newBook___add-from input {
