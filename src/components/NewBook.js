@@ -11,25 +11,26 @@ const NewBook = ({ onBookAdd, onPlusBtnClick, isActive }) => {
         onBookAdd(titleInput.value.trim(), authorInput.value.trim())
     }
 
-    const onPlusClick = (e) => {
-        e.target.classList.add("active");
+    const onFormKeyPress = (e) => {
+        if (e.target.keyCode == 13) {
+            onBookAdd(titleInput.value.trim(), authorInput.value.trim());
+        }
     }
 
     return (
         <div className={'newBook newBook__add-btn ' + (isActive ? 'active' : '')} onClick={(e) => { if (isActive == false) { onPlusBtnClick(!isActive) } }}>
             <div className="newBook__body">
-                <form className="newBook__add-form" onSubmit={(e) => onAddBtnClick(e)}>
+                <form className="newBook__add-form" onKeyPress={onFormKeyPress} onSubmit={onAddBtnClick}>
                     <div className="book">
                         <div className="book_inner">
                             <div className="book__title">
-                                <input type="text" ref={node => { titleInput = node }} />
+                                <input type="text" ref={node => { titleInput = node }} onKeyPress={onFormKeyPress} />
                             </div>
                             <div className="book__author">
-                                <input type="text" ref={node => { authorInput = node }} />
+                                <input type="text" ref={node => { authorInput = node }} onKeyPress={onFormKeyPress} />
                             </div>
                         </div>
                     </div>
-                    <button type="submit">Add</button>
                 </form>
             </div>
             <i className="fa fa-plus"></i>

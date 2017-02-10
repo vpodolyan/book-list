@@ -12,6 +12,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onBookAdd: (title, author) => {
             dispatch(addBook(title, author))
+            dispatch(setAddBookBtnActive(false))
         },
         onPlusBtnClick: (btnSatus) => {
             dispatch(setAddBookBtnActive(btnSatus))
