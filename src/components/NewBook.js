@@ -17,8 +17,14 @@ const NewBook = ({ onBookAdd, onPlusBtnClick, isActive }) => {
         }
     }
 
+    const onClick = (e) => {
+         if (isActive == false) {
+             onPlusBtnClick(!isActive)
+         }
+    }
+
     return (
-        <div className={'newBook newBook__add-btn ' + (isActive ? 'active' : '')} onClick={(e) => { if (isActive == false) { onPlusBtnClick(!isActive) } }}>
+        <div className={'newBook newBook__add-btn ' + (isActive ? 'active' : '')} onClick={onClick}>
             <div className="newBook__body">
                 <form className="newBook__add-form" onKeyPress={onFormKeyPress} onSubmit={onAddBtnClick}>
                     <div className="book">
