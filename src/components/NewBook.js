@@ -1,5 +1,6 @@
 import React from 'react'
 
+import AddBookForm from './AddBookForm'
 import '../../css/new-book.css'
 
 const NewBook = ({ onBookAdd, onPlusBtnClick, isActive }) => {
@@ -26,18 +27,7 @@ const NewBook = ({ onBookAdd, onPlusBtnClick, isActive }) => {
     return (
         <div className={'newBook newBook__add-btn ' + (isActive ? 'active' : '')} onClick={onClick}>
             <div className="newBook__body">
-                <form className="newBook__add-form" onKeyPress={onFormKeyPress} onSubmit={onAddBtnClick}>
-                    <div className="book">
-                        <div className="book_inner">
-                            <div className="book__title">
-                                <input type="text" ref={node => { titleInput = node }} onKeyPress={onFormKeyPress} />
-                            </div>
-                            <div className="book__author">
-                                <input type="text" ref={node => { authorInput = node }} onKeyPress={onFormKeyPress} />
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                <AddBookForm onBookAdd={onBookAdd} />
             </div>
             <i className="fa fa-plus"></i>
         </div>
