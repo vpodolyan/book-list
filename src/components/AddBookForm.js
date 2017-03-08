@@ -2,7 +2,8 @@ import React, { PropTypes } from 'react'
 
 class AddBookForm extends React.Component {
     static propTypes = {
-        onBookAdd: PropTypes.func.isRequired
+        onBookAdd: PropTypes.func.isRequired,
+        isOpen: PropTypes.bool.isRequired
     }
 
     constructor(props) {
@@ -10,6 +11,12 @@ class AddBookForm extends React.Component {
         this.state = {
             title: '',
             author: ''
+        }
+    }
+
+    componentWillReceiveProps = (props) => {
+        if (props.isOpen) {
+            this.titleInput.focus();
         }
     }
 
@@ -21,7 +28,9 @@ class AddBookForm extends React.Component {
     }
 
     onChange = (e, fieldName) => {
-        this.setState({...this.state, [fieldName]:e.target.value});
+        this.setState({
+            [fieldName]:e.target.value
+        });
     }
 
     render () {
@@ -32,6 +41,8 @@ class AddBookForm extends React.Component {
                         <div className="book__title">
                             <input
                                 type="text"
+                                placeholder="Title"
+                                ref={input => this.titleInput = input}
                                 value={this.state.title}
                                 onChange={e => this.onChange(e, 'title')}
                                 onKeyDown={e => this.onKeyPress(e, 'title')}
@@ -40,6 +51,7 @@ class AddBookForm extends React.Component {
                         <div className="book__author">
                             <input
                                 type="text"
+                                placeholder="Author"
                                 value={this.state.author}
                                 onChange={e => this.onChange(e, 'author')}
                                 onKeyDown={e => this.onKeyPress(e, 'author')}
