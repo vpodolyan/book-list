@@ -1,6 +1,8 @@
 import React from 'react'
 
 import AddBookForm from './AddBookForm'
+import AddBookButton from './AddBookButton'
+
 import '../../css/new-book.css'
 
 const NewBook = ({ onBookAdd, onPlusBtnClick, isActive }) => {
@@ -14,11 +16,13 @@ const NewBook = ({ onBookAdd, onPlusBtnClick, isActive }) => {
     }
 
     return (
-        <div className={'newBook newBook__add-btn ' + (isActive ? 'active' : '')} onClick={onClick}>
-            <div className="newBook__body">
-                <AddBookForm onBookAdd={onBookAdd} isOpen={isActive} />
+        <div>
+            <div className={'newBook newBook__add-btn ' + (isActive ? 'active' : '')} onClick={onClick}>
+                <div className="newBook__body">
+                    <AddBookForm onBookAdd={onBookAdd} isOpen={isActive} />
+                </div>
             </div>
-            <i className="fa fa-plus"></i>
+            <AddBookButton onClick={onClick} />
         </div>
     )
 }
