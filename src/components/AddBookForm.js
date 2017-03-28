@@ -1,4 +1,16 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes } from 'react';
+import styled from 'styled-components';
+
+const Input = styled.input`
+    display: inline-block;
+    color: #000;
+`;
+
+const Form = styled.form`
+    text-align: left;
+    position: relative;
+    z-index: 100;
+`;
 
 class AddBookForm extends React.Component {
     static propTypes = {
@@ -35,21 +47,21 @@ class AddBookForm extends React.Component {
 
     render () {
         return (
-            <form className="newBook__add-form" >
+            <Form className="newBook__add-form" >
                 <div className="book">
                     <div className="book_inner">
                         <div className="book__title">
-                            <input
+                            <Input
                                 type="text"
                                 placeholder="Title"
-                                ref={input => this.titleInput = input}
+                                innerRef={input => this.titleInput = input}
                                 value={this.state.title}
                                 onChange={e => this.onChange(e, 'title')}
                                 onKeyDown={e => this.onKeyPress(e, 'title')}
                             />
                         </div>
                         <div className="book__author">
-                            <input
+                            <Input
                                 type="text"
                                 placeholder="Author"
                                 value={this.state.author}
@@ -59,7 +71,7 @@ class AddBookForm extends React.Component {
                         </div>
                     </div>
                 </div>
-            </form>
+            </Form>
         );
     }
 }

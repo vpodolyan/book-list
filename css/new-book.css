@@ -18,14 +18,3 @@
 .newBook.active .newBook__body {
     display: block;
 }
-
-.newBook__add-form {
-    text-align: left;
-    position: relative;
-    z-index: 100;
-}
-
-.newBook__add-form input {
-    display: inline-block;
-    color: #000;
-}
