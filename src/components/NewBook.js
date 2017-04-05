@@ -1,9 +1,21 @@
-import React from 'react'
+import React from 'react';
+import styled from 'styled-components';
 
-import AddBookForm from './AddBookForm'
-import AddBookButton from './AddBookButton'
+import AddBookForm from './AddBookForm';
+import AddBookButton from './AddBookButton';
 
-import '../../css/new-book.css'
+const NewBookBlock = styled.div`
+    border-radius: 5px;
+    height: 50px;
+    width: ${props => props.active ? '100%' : '0'};
+    position: ${props => props.active ? 'static' : ''};
+
+    transition: width 0.5s;
+`;
+
+const NewBookBody = styled.div`
+    display: ${props => props.active ? 'block' : 'none'};
+`;
 
 const NewBook = ({ onBookAdd, onPlusBtnClick, isActive }) => {
     let titleInput
@@ -17,11 +29,11 @@ const NewBook = ({ onBookAdd, onPlusBtnClick, isActive }) => {
 
     return (
         <div>
-            <div className={'newBook newBook__add-btn ' + (isActive ? 'active' : '')} onClick={onClick}>
-                <div className="newBook__body">
+            <NewBookBlock active={isActive} onClick={onClick}>
+                <NewBookBody active={isActive}>
                     <AddBookForm onBookAdd={onBookAdd} isOpen={isActive} />
-                </div>
-            </div>
+                </NewBookBody>
+            </NewBookBlock>
             <AddBookButton onClick={onClick} />
         </div>
     )
