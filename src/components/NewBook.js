@@ -1,20 +1,41 @@
-import React from 'react'
+import React from 'react';
+import styled from 'styled-components';
 
-const NewBook = ({ onBookAdd }) => {
+import AddBookForm from './AddBookForm';
+import AddBookButton from './AddBookButton';
+
+const NewBookBlock = styled.div`
+    border-radius: 5px;
+    height: 50px;
+    width: ${props => props.active ? '100%' : '0'};
+    position: ${props => props.active ? 'static' : ''};
+
+    transition: width 0.5s;
+`;
+
+const NewBookBody = styled.div`
+    display: ${props => props.active ? 'block' : 'none'};
+`;
+
+const NewBook = ({ onBookAdd, onPlusBtnClick, isActive }) => {
     let titleInput
     let authorInput
 
-    const onAddBtnClick = (e) => {
-        e.preventDefault()
-        onBookAdd(titleInput.value.trim(), authorInput.value.trim())
+    const onClick = (e) => {
+         if (isActive == false) {
+             onPlusBtnClick(!isActive)
+         }
     }
 
     return (
-        <form onSubmit={(e) => onAddBtnClick(e)}>
-            <input type="text" ref={node => { titleInput = node }} />
-            <input type="text" ref={node => { authorInput = node }} />
-            <input className = "NewBook__add-btn" type="submit" value="Add" />
-        </form>
+        <div>
+            <NewBookBlock active={isActive} onClick={onClick}>
+                <NewBookBody active={isActive}>
+                    <AddBookForm onBookAdd={onBookAdd} isOpen={isActive} />
+                </NewBookBody>
+            </NewBookBlock>
+            <AddBookButton onClick={onClick} />
+        </div>
     )
 }
 

@@ -23,3 +23,10 @@ export const removeBook = (id) => {
     id,
   }
 }
+
+export const setAddBookBtnActive = (value) => {
+    return {
+        type: types.SET_ADD_BTN_ACTIVE,
+        isActive: value
+    }
+}
