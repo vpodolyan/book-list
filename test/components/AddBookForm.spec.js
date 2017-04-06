@@ -1,6 +1,6 @@
 import expect from 'expect'
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { mount } from 'enzyme'
 import AddBookForm from '../../src/components/AddBookForm.js'
 
 describe("AddBookForm component tests", () => {
@@ -8,7 +8,7 @@ describe("AddBookForm component tests", () => {
     const onBookAdd = expect.createSpy();
 
     beforeEach(() => {
-        component = shallow(
+        component = mount(
             <AddBookForm onBookAdd={onBookAdd} />
         );
     });
@@ -18,7 +18,7 @@ describe("AddBookForm component tests", () => {
     });
 
     it("should call onBookAdd() when Enter pressed", () => {
-        component.find('input').first().simulate('keyDown', { target: { keyCode: 13 } });
+        component.find('input').first().simulate('keyDown', { keyCode: 13 });
         expect(onBookAdd).toHaveBeenCalled();
     });
 });
