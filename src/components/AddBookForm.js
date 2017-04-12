@@ -4,6 +4,13 @@ import styled from 'styled-components';
 const Input = styled.input`
     display: inline-block;
     color: #000;
+    border-bottom: 0 solid #fff;
+
+    transition: border-bottom 0.2s;
+
+    &:focus {
+        border-bottom: 1px solid #1f8ceb;
+    }
 `;
 
 const Form = styled.form`

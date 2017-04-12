@@ -23,27 +23,3 @@ body {
 .book__author {
     padding-left: 2rem;
 }
-
-input {
-    /*width: 75%;*/
-    /*height: 50px;*/
-    border: none;
-    border-bottom: 1px solid #ccc;
-    /*font-size: 28px;*/
-}
-
-.no-borders {
-    border: none;
-}
-
-.add-btn {
-    height: 50px;
-    font-size: 28px;
-    text-decoration: none;
-    color: #555555;
-    vertical-align: bottom;
-}
-
-.add-btn:hover {
-    text-decoration: none;
-}
