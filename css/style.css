@@ -2,24 +2,3 @@ body {
     background: #eee; /* #F0F0F0; */
     font-size: 16px;
 }
-
-.book {
-    background: #fff;
-    margin-top: 1rem;
-}
-.book_inner {
-    padding: 1.25rem 2rem;
-}
-
-.book_inner div {
-    display: inline-block;
-}
-
-.book__title {
-    border-right: 0.25rem solid #f0f0f0;
-    width: 40%;
-}
-
-.book__author {
-    padding-left: 2rem;
-}

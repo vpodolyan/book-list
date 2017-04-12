@@ -1,9 +1,12 @@
 import React, { PropTypes } from 'react';
 import styled from 'styled-components';
 
+import Book from './Book'; 
+
 const Input = styled.input`
     display: inline-block;
     color: #000;
+    border: 0;
     border-bottom: 0 solid #fff;
 
     transition: border-bottom 0.2s;
@@ -52,35 +55,31 @@ class AddBookForm extends React.Component {
         });
     }
 
-    render () {
-        return (
-            <Form className="newBook__add-form" >
-                <div className="book">
-                    <div className="book_inner">
-                        <div className="book__title">
-                            <Input
-                                type="text"
-                                placeholder="Title"
-                                innerRef={input => this.titleInput = input}
-                                value={this.state.title}
-                                onChange={e => this.onChange(e, 'title')}
-                                onKeyDown={e => this.onKeyPress(e, 'title')}
-                            />
-                        </div>
-                        <div className="book__author">
-                            <Input
-                                type="text"
-                                placeholder="Author"
-                                value={this.state.author}
-                                onChange={e => this.onChange(e, 'author')}
-                                onKeyDown={e => this.onKeyPress(e, 'author')}
-                            />
-                        </div>
-                    </div>
-                </div>
-            </Form>
-        );
-    }
+    render = () => (
+        <Form>
+            <Book
+                title={
+                    <Input
+                        type="text"
+                        placeholder="Title"
+                        innerRef={input => this.titleInput = input}
+                        value={this.state.title}
+                        onChange={e => this.onChange(e, 'title')}
+                        onKeyDown={e => this.onKeyPress(e, 'title')}
+                    />
+                }
+                author={
+                    <Input
+                        type="text"
+                        placeholder="Author"
+                        value={this.state.author}
+                        onChange={e => this.onChange(e, 'author')}
+                        onKeyDown={e => this.onKeyPress(e, 'author')}
+                    />
+                }
+            />
+        </Form>
+    );
 }
 
 export default AddBookForm;
