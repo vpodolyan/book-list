@@ -1,10 +1,10 @@
 import expect from 'expect'
 import React from 'react'
-import { shallow } from 'enzyme'
-import Book from '../../src/components/Book.js'
+import { shallow, mount } from 'enzyme'
+import Book, {BookAuthor, BookTitle} from '../../src/components/Book.js'
 
 function setup(title, author) {
-    return shallow(
+    return mount(
         <Book title={title} author={author} />
     )
 }
@@ -14,7 +14,7 @@ describe("Book component tests", () => {
         const title = "New book"
         const author = "Classy author"
         const component = setup(title, author)
-        expect(component.find(".book__title").text()).toBe(title);
-        expect(component.find(".book__author").text()).toBe(author);
+        expect(component.find(BookTitle).text()).toBe(title);
+        expect(component.find(BookAuthor).text()).toBe(author);
     })
 })

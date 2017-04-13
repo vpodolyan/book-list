@@ -1,6 +1,6 @@
 import * as types from '../actions/types'
 
-export default function books(state = [{ id:1, title: "tt", author: "test"}, { id:2, title: "tt", author: "test"}], action) {
+export default function books(state = [{ id:1, title: "tt", author: "test"}, { id:2, title: "aa", author: "test"}], action) {
     switch (action.type) {
         case types.ADD_BOOK:
             const lastBookId = state.length > 0 ? state[state.length - 1].id + 1 : 1;
@@ -13,7 +13,7 @@ export default function books(state = [{ id:1, title: "tt", author: "test"}, { i
                 }
             ]
         case types.REMOVE_BOOK:
-            return state.filter((book) => book.id !== book.id);
+            return state.filter(book => book.id != action.id);
         case types.EDIT_BOOK:
             return state.map((book) => {
                 if (book.id == action.id) {

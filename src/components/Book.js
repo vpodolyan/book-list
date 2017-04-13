@@ -64,13 +64,13 @@ const DeleteButton = styled.a`
     }
 `;
 
-const Book = ({title, author}) => (
+const Book = ({id, title, author, onDeleteButtonClick}) => (
         <BookBody>
             <BookInner>
                 <BookTitle>{title}</BookTitle>
                 <BookAuthor>{author}</BookAuthor>
                 <BookActions>
-                    <DeleteButton />
+                    <DeleteButton onClick={onDeleteButtonClick} />
                 </BookActions>
             </BookInner>
         </BookBody>

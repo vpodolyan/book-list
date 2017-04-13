@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onBookRemove: (id) => {
+    removeBook: (id) => {
       dispatch(removeBook(id))
     }
   }

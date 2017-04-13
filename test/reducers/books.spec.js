@@ -13,9 +13,10 @@ describe('books reducer tests', () => {
     })
 
     it('should remove book from state', () => {
-        const beforeState = [testBook];
-        const afterState = [];
-        expect(booksReducer([], removeBook(testBook.id))).toEqual(afterState);
+        const book2 = {id: 2};
+        const beforeState = [testBook, book2];
+        const afterState = [book2];
+        expect(booksReducer(beforeState, removeBook(testBook.id))).toEqual(afterState);
     })
 
     it('should update edited book', () => {
