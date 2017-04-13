@@ -14,6 +14,10 @@ const Input = styled.input`
     &:focus {
         border-bottom: 1px solid #1f8ceb;
     }
+
+    &::placeholder {
+        color: #a3a2a2;
+    }
 `;
 
 const Form = styled.form`
@@ -36,8 +40,8 @@ class AddBookForm extends React.Component {
         }
     }
 
-    componentWillReceiveProps = (props) => {
-        if (props.isOpen) {
+    componentWillReceiveProps = ({ isOpen }) => {
+        if (isOpen) {
             this.titleInput.focus();
         }
     }
