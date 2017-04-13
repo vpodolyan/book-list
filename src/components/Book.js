@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Colors from '../utils/colors';
+
 const BookBody = styled.div`
     background: #fff;
     margin-top: 1rem;
@@ -33,11 +35,13 @@ const DeleteButton = styled.a`
     right: 0px;
     width: 32px;
     height: 32px;
-    opacity: 0.3;
 
     &:hover {
         cursor: pointer;
-        opacity: 1;
+
+        &:before, &:after {
+            background-color: ${Colors.mainBlue};
+        }
     }
 
     &:before, &:after {
@@ -46,7 +50,9 @@ const DeleteButton = styled.a`
         content: ' ';
         height: 33px;
         width: 2px;
-        background-color: #333;
+        background-color: #c0c0c0;
+
+        transition: background-color 0.2s;
     }
 
     &:before {       

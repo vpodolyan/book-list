@@ -1,18 +1,19 @@
 import React, { PropTypes } from 'react';
 import styled from 'styled-components';
 
+import Colors from '../utils/colors';
 import Book from './Book'; 
 
 const Input = styled.input`
     display: inline-block;
     color: #000;
     border: 0;
-    border-bottom: 0 solid #fff;
+    border-bottom: 1px solid #fff;
 
-    transition: border-bottom 0.2s;
+    transition: border-color 0.2s;
 
     &:focus {
-        border-bottom: 1px solid #1f8ceb;
+        border-color: ${Colors.mainBlue};
     }
 
     &::placeholder {
