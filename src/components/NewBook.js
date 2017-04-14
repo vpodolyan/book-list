@@ -17,7 +17,7 @@ const NewBookBody = styled.div`
     display: ${props => props.active ? 'block' : 'none'};
 `;
 
-const NewBook = ({ onBookAdd, onPlusBtnClick, isActive }) => {
+const NewBook = ({ onBookAdd, onPlusBtnClick, isActive, onCancel }) => {
     let titleInput
     let authorInput
 
@@ -31,7 +31,7 @@ const NewBook = ({ onBookAdd, onPlusBtnClick, isActive }) => {
         <div>
             <NewBookBlock active={isActive} onClick={onClick}>
                 <NewBookBody active={isActive}>
-                    <AddBookForm onBookAdd={onBookAdd} isOpen={isActive} />
+                    <AddBookForm onBookAdd={onBookAdd} isOpen={isActive} onCancel={onCancel} />
                 </NewBookBody>
             </NewBookBlock>
             <AddBookButton onClick={onClick} />

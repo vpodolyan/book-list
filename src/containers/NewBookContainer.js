@@ -16,7 +16,8 @@ const mapDispatchToProps = (dispatch) => {
         },
         onPlusBtnClick: (btnSatus) => {
             dispatch(setAddBookBtnActive(btnSatus))
-        }
+        },
+        onCancel: () => dispatch(setAddBookBtnActive(false))
     }
 }
 
