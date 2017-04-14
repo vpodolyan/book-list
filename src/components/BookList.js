@@ -1,14 +1,14 @@
 import React from 'react'
 import Book from './Book.js'
 
-const BookList = ({books, onBookRemove}) => (
+const BookList = ({books, removeBook}) => (
     <div>
     <h1>Books</h1>
     {books.map(book =>
         <Book
             key={book.id}
             {...book}
-            onDeleteButtonClick={() => onBookRemove(book.id)}
+            onDeleteButtonClick={() => removeBook(book.id)}
         />
     )}
     </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Colors from '../utils/colors';
+import DeleteButton from './buttons/DeleteButton';
 
 const BookBody = styled.div`
     background: #fff;
@@ -27,41 +28,6 @@ const BookActions = styled.div`
     position: relative;
     display: inline-block;
     float:right;
-`;
-
-const DeleteButton = styled.a`
-    position: absolute;
-    top: -5px;
-    right: 0px;
-    width: 32px;
-    height: 32px;
-
-    &:hover {
-        cursor: pointer;
-
-        &:before, &:after {
-            background-color: ${Colors.mainBlue};
-        }
-    }
-
-    &:before, &:after {
-        position: absolute;
-        left: 15px;
-        content: ' ';
-        height: 33px;
-        width: 2px;
-        background-color: #c0c0c0;
-
-        transition: background-color 0.2s;
-    }
-
-    &:before {       
-        transform: rotate(45deg);
-    }
-
-    &:after {
-        transform: rotate(-45deg);
-    }
 `;
 
 const Book = ({id, title, author, onDeleteButtonClick}) => (

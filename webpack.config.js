@@ -16,25 +16,29 @@ module.exports = {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-        template: "./index.html"
+      template: "./index.html"
     })
   ],
+  resolve: {
+    root: [ path.join(__dirname, 'src') ],
+    extensions: ['', '.js', '.jsx']
+  },
   module: {
     loaders: [
       {
         test: /\.js$/,
-        loaders: [ 'babel' ],
+        loaders: ['babel'],
         exclude: /node_modules/,
         include: __dirname
       },
       {
-         test: /\.css$/,
-         loader: ('style!css')
+        test: /\.css$/,
+        loader: ('style!css')
       }
     ]
- },
- devServer: {
-     contentBase: './',
-     port: 5000
- }
+  },
+  devServer: {
+    contentBase: './',
+    port: 5000
+  }
 }
