@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import AddBookForm from './AddBookForm';
+import EditableBook from './EditableBook';
 import AddBookButton from './AddBookButton';
 
 const NewBookBlock = styled.div`
@@ -31,7 +31,7 @@ const NewBook = ({ onBookAdd, onPlusBtnClick, isActive, onCancel }) => {
         <div>
             <NewBookBlock active={isActive} onClick={onClick}>
                 <NewBookBody active={isActive}>
-                    <AddBookForm onBookAdd={onBookAdd} isOpen={isActive} onCancel={onCancel} />
+                    <EditableBook onComplete={onBookAdd} isActive={isActive} onCancel={onCancel} />
                 </NewBookBody>
             </NewBookBlock>
             <AddBookButton onClick={onClick} />

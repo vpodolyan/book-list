@@ -27,30 +27,38 @@ const Form = styled.form`
     z-index: 100;
 `;
 
-class AddBookForm extends React.Component {
+class EditableBook extends React.Component {
     static propTypes = {
-        onBookAdd: PropTypes.func.isRequired,
-        isOpen: PropTypes.bool.isRequired,
-        onCancel: PropTypes.func
+        onBookAdd: PropTypes.func,
+        isActive: PropTypes.bool.isRequired,
+        onComplete: PropTypes.func.isRequired,
+        onCancel: PropTypes.func,
+
+        title: PropTypes.string,
+        author: PropTypes.string
     }
 
     constructor(props) {
         super(props);
         this.state = {
-            title: '',
-            author: ''
+            title: props.title || '',
+            author: props.author || ''
         }
     }
 
-    componentWillReceiveProps = ({ isOpen }) => {
-        if (isOpen) {
+    componentWillReceiveProps = ({ isActive }) => {
+        if (isActive) {
             this.titleInput.focus();
         }
     }
 
     onKeyPress = (e, fieldName) => {
         if (e.keyCode == 13) {
-            this.props.onBookAdd(this.state.title, this.state.author);
+            this.props.onComplete(this.state.title, this.state.author);
+            this.setState({title: '', author: ''});
+        }
+        else if (e.keyCode == 27) {
+            this.props.onCancel();
             this.setState({title: '', author: ''});
         }
     }
@@ -89,4 +97,4 @@ class AddBookForm extends React.Component {
     );
 }
 
-export default AddBookForm;
+export default EditableBook;
