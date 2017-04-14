@@ -30,7 +30,8 @@ const Form = styled.form`
 class AddBookForm extends React.Component {
     static propTypes = {
         onBookAdd: PropTypes.func.isRequired,
-        isOpen: PropTypes.bool.isRequired
+        isOpen: PropTypes.bool.isRequired,
+        onCancel: PropTypes.func
     }
 
     constructor(props) {
@@ -82,6 +83,7 @@ class AddBookForm extends React.Component {
                         onKeyDown={e => this.onKeyPress(e, 'author')}
                     />
                 }
+              onDeleteButtonClick={this.props.onCancel}  
             />
         </Form>
     );
