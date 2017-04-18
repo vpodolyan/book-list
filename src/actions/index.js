@@ -30,3 +30,10 @@ export const setAddBookBtnActive = (value) => {
         isActive: value
     }
 }
+
+export const switchEditable = (bookId) => {
+    return {
+      type: types.SWITCH_EDIT_STATUS,
+      id: bookId
+    }
+}

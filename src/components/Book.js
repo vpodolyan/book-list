@@ -30,8 +30,8 @@ const BookActions = styled.div`
     float:right;
 `;
 
-const Book = ({id, title, author, onDeleteButtonClick}) => (
-        <BookBody>
+const Book = ({id, title, author, onDeleteButtonClick, onDoubleClick}) => (
+        <BookBody onDoubleClick={onDoubleClick}>
             <BookInner>
                 <BookTitle>{title}</BookTitle>
                 <BookAuthor>{author}</BookAuthor>
