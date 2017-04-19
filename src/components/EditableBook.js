@@ -8,16 +8,16 @@ const Input = styled.input`
     display: inline-block;
     color: #000;
     border: 0;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid ${Colors.darkGray};
 
-    transition: border-color 0.2s;
+    transition: border-color 0.4s;
 
     &:focus {
         border-color: ${Colors.mainBlue};
     }
 
     &::placeholder {
-        color: #a3a2a2;
+        color: ${Colors.darkGray};
     }
 `;
 
