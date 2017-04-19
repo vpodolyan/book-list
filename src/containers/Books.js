@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import BookList from '../components/BookList'
-import { removeBook } from '../actions'
+import { removeBook, switchEditable, editBook } from '../actions'
 
 const mapStateToProps = (state) => {
   return {
@@ -10,8 +10,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    removeBook: (id) => {
-      dispatch(removeBook(id))
+    removeBook: (id) => dispatch(removeBook(id)),
+    onDoubleClick: (id) => dispatch(switchEditable(id)),
+    completeEdit: (id, title, author) => { 
+      dispatch(editBook(id, title, author));
+      dispatch(switchEditable(id));
     }
   }
 }
