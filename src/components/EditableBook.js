@@ -2,11 +2,12 @@ import React, { PropTypes } from 'react';
 import styled from 'styled-components';
 
 import Colors from '../utils/colors';
-import Book from './Book'; 
+import Book from './Book';
 
 const Input = styled.input`
     display: inline-block;
     color: #000;
+    outline: none;
     border: 0;
     border-bottom: 1px solid ${Colors.darkGray};
 
@@ -91,7 +92,7 @@ class EditableBook extends React.Component {
                         onKeyDown={e => this.onKeyPress(e, 'author')}
                     />
                 }
-              onDeleteButtonClick={this.props.onCancel}  
+              onDeleteButtonClick={this.props.onCancel}
             />
         </Form>
     );
